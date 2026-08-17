@@ -10,32 +10,32 @@ Built for outbound testing with Twilio Media Streams + OpenAI Realtime.
 
 ```mermaid
 flowchart TD
-    A[Scenario JSON<br/>scenarios/*.json] --> B[make_call.py]
-    B --> C[Local exact-answer sheet<br/>outputs/primed/*.json]
-    C --> D[Twilio outbound call<br/>TWILIO_TO_NUMBER]
+    A["Scenario JSON<br/>scenarios/*.json"] --> B["make_call.py"]
+    B --> C["Local exact-answer sheet<br/>outputs/primed/*.json"]
+    C --> D["Twilio outbound call<br/>TWILIO_TO_NUMBER"]
 
-    D --> E[app.py /voice]
-    E --> F[TwiML Connect + Stream]
-    F --> G[/media-stream WebSocket]
+    D --> E["app.py /voice"]
+    E --> F["TwiML Connect + Stream"]
+    F --> G["/media-stream WebSocket"]
 
-    G --> H[OpenAI Realtime<br/>gpt-realtime-2.1-mini]
-    G --> I[call_controller.py<br/>greeting / goals / end rules]
-    G --> J[session_store.py<br/>live history + end_reason]
+    G --> H["OpenAI Realtime<br/>gpt-realtime-2.1-mini"]
+    G --> I["call_controller.py<br/>greeting / goals / end rules"]
+    G --> J["session_store.py<br/>live history + end_reason"]
 
-    H <-->|PCMU audio| G
-    I --> K{End condition?}
-    K -->|goodbye / goal / max turns / timeout / silence| L[Hang up via Twilio REST]
-    K -->|continue| H
+    H <-->|"PCMU audio"| G
+    I --> K{"End condition?"}
+    K -->|"goodbye / goal / max turns / timeout / silence"| L["Hang up via Twilio REST"]
+    K -->|"continue"| H
 
-    L --> M[Twilio dual-channel recording]
-    M --> N[/recording webhook<br/>returns 202 immediately]
-    N --> O[Background job]
-    O --> P[Download MP3 / WAV]
-    P --> Q[Whisper transcription]
-    Q --> R[QA analysis gpt-4.1-mini]
-    R --> S[outputs/reports + transcripts]
+    L --> M["Twilio dual-channel recording"]
+    M --> N["/recording webhook<br/>returns 202 immediately"]
+    N --> O["Background job"]
+    O --> P["Download MP3 / WAV"]
+    P --> Q["Whisper transcription"]
+    Q --> R["QA analysis gpt-4.1-mini"]
+    R --> S["outputs/reports + transcripts"]
 
-    T[/status fallback] -.-> O
+    T["/status fallback"] -.-> O
 ```
 
 ### What each stage owns
