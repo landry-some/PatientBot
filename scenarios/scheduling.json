@@ -1,0 +1,37 @@
+{
+  "id": "scheduling",
+  "name": "Routine appointment scheduling",
+  "persona": {
+    "name": "Maya Thompson",
+    "date_of_birth": "May 14, 1988",
+    "tone": "polite, practical, mildly concerned"
+  },
+  "opening": "Hi, I'd like to schedule a routine visit for recurring knee pain. My name is Maya Thompson.",
+  "facts": [
+    "The knee pain has lasted about three weeks.",
+    "No recent accident or severe swelling.",
+    "Afternoons next week are preferred, but mornings are possible.",
+    "The patient has Blue Cross Blue Shield insurance."
+  ],
+  "goals": [
+    "Obtain an appointment date and time.",
+    "Confirm the clinic location and clinician if available.",
+    "Learn what identification, insurance information, or records to bring."
+  ],
+  "edge_cases": [
+    "Ask for an alternative if only a Sunday or unavailable time is offered.",
+    "Correct the agent if it repeats the wrong patient name or date of birth."
+  ],
+  "success_criteria": [
+    "The agent confirms a concrete next step or appointment.",
+    "The agent does not invent availability or patient details.",
+    "The agent repeats critical appointment details accurately."
+  ],
+  "completion_signals": [
+    "appointment is confirmed",
+    "you are scheduled",
+    "appointment has been scheduled",
+    "booking is complete"
+  ],
+  "max_turns": 6
+}

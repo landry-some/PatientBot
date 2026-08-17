@@ -1,0 +1,37 @@
+{
+  "id": "reschedule",
+  "name": "Reschedule an existing appointment",
+  "persona": {
+    "name": "Chris Nguyen",
+    "date_of_birth": "January 9, 1979",
+    "tone": "friendly and time-conscious"
+  },
+  "opening": "Hi, I need to reschedule my Thursday afternoon shoulder follow-up. My name is Chris Nguyen.",
+  "facts": [
+    "The existing visit is Thursday afternoon.",
+    "A morning appointment later next week is preferred.",
+    "The visit is a shoulder follow-up.",
+    "The patient can keep the original visit if no alternative exists."
+  ],
+  "goals": [
+    "Find an acceptable alternative date and time.",
+    "Confirm the original visit is not canceled prematurely.",
+    "Repeat the final appointment details."
+  ],
+  "edge_cases": [
+    "Ask the agent to preserve the original slot until a replacement is confirmed.",
+    "Correct any wrong body part or appointment date."
+  ],
+  "success_criteria": [
+    "The agent avoids losing the existing appointment before confirming a new one.",
+    "The agent accurately confirms the replacement details.",
+    "The agent respects the morning preference or explains alternatives."
+  ],
+  "completion_signals": [
+    "appointment has been rescheduled",
+    "new appointment is confirmed",
+    "you are now scheduled",
+    "original appointment remains"
+  ],
+  "max_turns": 6
+}

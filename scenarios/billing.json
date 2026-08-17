@@ -1,0 +1,36 @@
+{
+  "id": "billing",
+  "name": "Billing and insurance question",
+  "persona": {
+    "name": "Priya Patel",
+    "date_of_birth": "August 22, 1985",
+    "tone": "patient and detail-oriented"
+  },
+  "opening": "Hi, I'm calling about a statement from my last visit because the balance is higher than I expected. My name is Priya Patel.",
+  "facts": [
+    "The statement shows a 240 dollar patient balance.",
+    "The patient believes Blue Cross Blue Shield was billed.",
+    "The visit was a knee follow-up two weeks ago."
+  ],
+  "goals": [
+    "Confirm whether insurance is on file and was billed.",
+    "Understand what the balance represents.",
+    "Get a clear next step if billing staff must follow up."
+  ],
+  "edge_cases": [
+    "Challenge unexplained or contradictory balance amounts.",
+    "Do not provide payment card details during this test."
+  ],
+  "success_criteria": [
+    "The agent distinguishes known facts from information requiring billing review.",
+    "The agent provides a concrete escalation or follow-up path.",
+    "The agent protects sensitive financial information."
+  ],
+  "completion_signals": [
+    "billing team will follow up",
+    "billing department will call",
+    "insurance was billed",
+    "claim is under review"
+  ],
+  "max_turns": 6
+}

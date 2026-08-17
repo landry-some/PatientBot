@@ -1,0 +1,7 @@
+﻿.env
+__pycache__/
+.pytest_cache/
+*.py[cod]
+recordings/
+outputs/
+static/message.mp3
